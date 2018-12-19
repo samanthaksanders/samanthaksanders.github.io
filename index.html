@@ -16,15 +16,11 @@
 
 	        body {
 	            line-height: 1.75;
-	            font-family: 'Martel', sans-serif;
+	            font-family: 'Martel', georgia, serif;
 	            color: #323232;
 	            font-weight: 200;
 	            margin: 10px;
 	            background: #f0f0f0;
-	            background-image: -webkit-linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
-	            background-image:    -moz-linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
-	            background-image:      -o-linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
-	            background-image:         linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
 	        }
 
 	        h1 {
@@ -67,7 +63,7 @@
 
 	        a {
 	            color: #444;
-	            text-decoration: underline solid #d0209f;
+	            text-decoration: underline solid #444;
 	        }
 
 	        a:hover {
@@ -111,7 +107,7 @@
 	            padding-left: 0;
 	        }
 
-	        .nav > li {
+	        .nav__item {
 	            display: inline-block;
 	            margin-right: 1.5em;
 	            margin-bottom: 0;
@@ -154,9 +150,21 @@
 				white-space: nowrap;
 			}
 
-	        .print-break-before {
-	            page-break-before: always;
-	        }
+			.t-pink {
+				background-image: -webkit-linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
+	            background-image:    -moz-linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
+	            background-image:      -o-linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
+	            background-image:         linear-gradient(135deg, rgb(255, 179, 236) 0%,rgb(255, 217, 179) 100%);
+			}
+
+			.t-pink .u-current-color {
+				text-decoration: underline solid #d0209f;
+			}
+
+			.t-pink .u-current-color:hover {
+				color: #d0209f;
+				text-decoration: underline solid #d0209f;
+			}
 
 
 	        @media only screen and (min-width: 48em) {
@@ -223,17 +231,17 @@
 	    </style>
 	</head>
 
-	<body>
+	<body class="t-pink">
 		<div class="site-content">
 			<div class="cv">
 				<h1>Samantha Sanders<span class="u-hide-visually"> – </span><span class="u-text-muted u-font-weight-normal u-display-block u-space u-text-small">Front-end Developer</span>
 				</h1>
 				<ul class="nav cv__rule">
-					<li>
-						<a href="mailto:samantha.k.sanders@gmail.com">samantha.k.sanders@gmail.com</a>
+					<li class="nav__item">
+						<a class="u-current-color" href="mailto:samantha.k.sanders@gmail.com">samantha.k.sanders@gmail.com</a>
 					</li>
-					<li>
-						<a href="tel:+64223173321">+64 22 317 3321</a>
+					<li class="nav__item">
+						<a class="u-current-color" href="tel:+64223173321">+64 22 317 3321</a>
 					</li>
 				</ul>
 
@@ -241,10 +249,10 @@
 				<div class="cv__item">
 					<ul>
 						<li>Excellent at creating scalable, maintainable CSS architectures (using BEM and ITCSS methodologies).</li>
-						<li>Highly accomplished and focused on building accessible user experiences. Read a <a class="u-nowrap" href="https://www.springload.co.nz/blog/being-pragmatic-about-accessibility/">blog post I wrote about it.</a></li>
+						<li>Highly accomplished and focused on building accessible user experiences. Read a <a class="u-current-color u-nowrap" href="https://www.springload.co.nz/blog/being-pragmatic-about-accessibility/">blog post I wrote about it.</a></li>
 						<li>Passionate about building rich interactions through CSS and progressively enhanced vanilla JavaScript.</li>
 						<li>Proficient at working with various templating languages (Jinja2, Django, React/JSX).</li>
-						<li>Enjoy sharing my expertise with others so we can collectively craft beautiful and simple user experiences people love.</li>
+						<li>Enjoy sharing my expertise with others in order to collaboratively craft and improve beautiful and usable experiences.</li>
 						<li>Comfortable conducting staff/client training and peer code reviews.</li>
 						<li>Experience writing ES6/ES2015 JavaScript, using Node-based tooling (Babel, module bundlers).</li>
 						<li>Experience with build tools and pre-/post-processors - yarn/npm, Webpack, Sass.</li>
