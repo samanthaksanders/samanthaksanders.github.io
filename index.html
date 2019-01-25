@@ -11,31 +11,30 @@
 		<link rel="manifest" href="./favicons/manifest.json">
 		<meta name="theme-color" content="#ffffff">
 
-		<link href="https://fonts.googleapis.com/css?family=Martel:800,200" rel="stylesheet">
 	    <style type="text/css" media="all">
 
 	        body {
 	            line-height: 1.75;
-	            font-family: 'Martel', georgia, serif;
+				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	            color: #323232;
-	            font-weight: 200;
+	            font-weight: 300;
 	            margin: 10px;
 	            background: #f0f0f0;
 	        }
 
 	        h1 {
 	            margin-bottom: 0;
-	            font-size: 2.25em;
-	            line-height: 1.3;
+	            font-size: 3em;
+	            line-height: 1;
 	        }
 
 	        h2 {
-	            font-size: 1.5em;
+	            font-size: 2em;
 	        }
 
 	        h3 {
-				font-size: 1.0625em;
-	            margin-bottom: .25em;
+				font-size: 1.35em;
+	            margin-bottom: .15em;
 	        }
 
 	        p,
@@ -102,6 +101,7 @@
 	        }
 
 	        .sub-heading {
+				margin-top: .15em;
 	            margin-bottom: .75em;
 	        }
 
@@ -120,11 +120,20 @@
 	        	color: #757575;
 	        }
 
-			.u-text-small {
-				font-size: .65em;
+			.u-text-smaller {
+				font-size: .55em;
 			}
 
-	        .u-font-weight-normal {
+			.u-text-larger {
+				font-size: 1.2em;
+				line-height: 1.6;
+			}
+
+			.u-text-lighter {
+				font-weight: 200;
+			}
+
+	        .u-font-weight-light {
 	        	font-weight: 200;
 	        }
 
@@ -180,6 +189,10 @@
 	                font-size: 1.0625em;
 	            }
 
+				h1 {
+					font-size: 3.5em;
+				}
+
 	            ul {
 	                padding-left: 0;
 	            }
@@ -192,12 +205,21 @@
 
 	        @media only screen and (max-width: 26.25em) {
 	            body {
-	                font-size: .875em;
+	                font-size: .925em;
 	            }
+
+				h1 {
+					font-size: 2.75em;
+				}
 
 	            ul {
 		            padding-left: 1.1rem;
 		        }
+
+				.u-text-larger {
+					font-size: 1.175em;
+					line-height: 1.5;
+				}
 
 	        }
 
@@ -239,7 +261,7 @@
 	<body class="t-pink">
 		<div class="site-content">
 			<div class="cv">
-				<h1>Samantha Sanders<span class="u-hide-visually"> – </span><span class="u-text-muted u-font-weight-normal u-display-block u-space u-text-small">Front-end Developer</span>
+				<h1>Samantha Sanders<span class="u-hide-visually"> – </span><span class="sub-heading u-text-muted u-font-weight-light u-display-block u-space u-text-smaller">Front-end Developer</span>
 				</h1>
 				<ul class="nav cv__rule">
 					<li class="nav__item">
@@ -249,6 +271,11 @@
 						<a class="u-current-color" href="tel:+64223173321">+64 22 317 3321</a>
 					</li>
 				</ul>
+
+				<p class="u-text-larger u-text-muted u-space">I am a front-end  developer with over six years of commercial experience. With a background in graphic design, I enjoy working closely with designers so that together we can craft beautiful and simple user experiences people will love.</p>
+				<p class="u-text-larger u-text-muted">I’m particularly interested in creating scalable, maintainable CSS architectures and dedicated to making experiences that are accessible and easy to use for everyone.</p>
+
+				<hr />
 
 				<h2>Key skills</h2>
 				<div class="cv__item">
@@ -287,7 +314,7 @@
 				</div>
 
 				<div class="cv__item">
-					<h3>Analyst & Graphic Designer, McNamara Research, Wellington</h3>
+					<h3>Analyst & Designer, McNamara Research, Wellington</h3>
 					<p class="sub-heading u-text-muted">Aug 2011 - May 2012</p>
 					<p>Monitoring and analysis of conventional communications data for government and private sector clients, as well as the design and layout of formal reports to be presented to those clients.</p>
 				</div>
@@ -308,3 +335,5 @@
 		</div>
 	</body>
 </html>
+
+
