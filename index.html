@@ -1,339 +1,370 @@
 <!DOCTYPE html>
 <html lang="en-nz">
-	<head>
-	    <meta charset="utf-8">
-	    <title>Samantha Sanders | Front-end Developer</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="./favicons/manifest.json">
-		<meta name="theme-color" content="#ffffff">
+<head>
+	<meta charset="utf-8">
+	<title>Samantha Sanders | Front-end Developer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	    <style type="text/css" media="all">
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="./favicons/manifest.json">
+	<meta name="theme-color" content="#ffffff">
 
-	        body {
-	            line-height: 1.75;
-				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	            color: #323232;
-	            font-weight: 300;
-	            margin: 10px;
-	            background: #f0f0f0;
-	        }
+	<style type="text/css" media="all">
+		body {
+			line-height: 1.75;
+			font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			color: #323232;
+			font-weight: 300;
+			margin: 10px;
+			background: #f0f0f0;
+		}
 
-	        h1 {
-	            margin-bottom: 0;
-	            font-size: 3em;
-	            line-height: 1;
-	        }
+		h1 {
+			margin-bottom: 0;
+			font-size: 3em;
+			line-height: 1;
+		}
 
-	        h2 {
-	            font-size: 2em;
-	        }
+		h2 {
+			font-size: 2em;
+		}
 
-	        h3 {
-				font-size: 1.35em;
-	            margin-bottom: .15em;
-	        }
+		h3 {
+			font-size: 1.35em;
+			margin-bottom: .15em;
+		}
 
-	        p,
-	        ul {
-	            margin-top: 0;
-	            margin-bottom: .5em;
-	        }
+		p,
+		ul {
+			margin-top: 0;
+			margin-bottom: .5em;
+		}
 
-	        ul {
-	            padding-left: 1.175rem;
-	        }
+		ul {
+			padding-left: 1.175rem;
+		}
 
-	        ul > li {
-	            margin-bottom: .25em;
-	        }
+		ul>li {
+			margin-bottom: .25em;
+		}
 
-	        hr {
-	            height: 0;
-	            width: 100%;
-	            border: none;
-	            border-bottom: solid 1px #dadada;
-	            margin-bottom: 2em;
-	            margin-top: 2em;
-	        }
+		hr {
+			height: 0;
+			width: 100%;
+			border: none;
+			border-bottom: solid 1px #dadada;
+			margin-bottom: 2em;
+			margin-top: 2em;
+		}
 
-	        a {
-				color: inherit;
-				background-color: #f0f0f0;
-				text-decoration: none;
-	            border-bottom: solid 1px #bdbcbc;
-	        }
+		a {
+			color: inherit;
+			background-color: #f0f0f0;
+			text-decoration: none;
+			border-bottom: solid 1px #bdbcbc;
+		}
 
-	        a:hover {
-	            color: #ffffff;
-				background-color: #232323;
-				border-bottom-color: #232323;
-	        }
+		a:hover {
+			color: #ffffff;
+			background-color: #232323;
+			border-bottom-color: #232323;
+		}
 
-	        .site-content {
-	        	position: relative;
-	        	z-index: 3;
-	        	height: 100%;
-	        	overflow: scroll;
-	        	background: #fff;
-	        }
+		.site-content {
+			position: relative;
+			z-index: 3;
+			height: 100%;
+			overflow: scroll;
+			background: #fff;
+		}
 
-	        .site-content::-webkit-scrollbar {
-	        	display: none;
-	        }
+		.site-content::-webkit-scrollbar {
+			display: none;
+		}
 
-	        .cv {
-	            max-width: 39em;
-	            margin: 5%;
-	        }
+		.cv {
+			max-width: 39em;
+			margin: 5%;
+		}
 
-	        .cv__rule {
-	            border-bottom: solid 1px #dadada;
-	            padding-bottom: 2em;
-	            margin-bottom: 2em;
-	        }
+		.cv__rule {
+			border-bottom: solid 1px #dadada;
+			padding-bottom: 2em;
+			margin-bottom: 2em;
+		}
 
-	        .cv__item {
-	        	margin-bottom: 2em;
-	        }
+		.cv__item {
+			margin-bottom: 2em;
+		}
 
-	        .sub-heading {
-				margin-top: .15em;
-	            margin-bottom: .75em;
-	        }
+		.sub-heading {
+			margin-top: .15em;
+			margin-bottom: .75em;
+		}
 
-	        .nav {
-	            list-style: none;
-	            padding-left: 0;
-	        }
+		.nav {
+			list-style: none;
+			padding-left: 0;
+		}
 
-	        .nav__item {
-	            display: inline-block;
-	            margin-right: 1.5em;
-	            margin-bottom: 0;
-	        }
+		.nav__item {
+			display: inline-block;
+			margin-right: 1.5em;
+			margin-bottom: 0;
+		}
 
-	        .u-text-muted {
-	        	color: #757575;
-	        }
+		.u-text-muted {
+			color: #757575;
+		}
 
-			.u-text-smaller {
-				font-size: .55em;
+		.u-text-smaller {
+			font-size: .55em;
+		}
+
+		.u-text-larger {
+			font-size: 1.2em;
+			line-height: 1.6;
+		}
+
+		.u-text-lighter {
+			font-weight: 200;
+		}
+
+		.u-font-weight-light {
+			font-weight: 200;
+		}
+
+		.u-display-block {
+			display: block;
+		}
+
+		.u-space {
+			margin-bottom: 1em;
+		}
+
+		.u-nowrap {
+			white-space: nowrap;
+		}
+
+		.u-hide-visually {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			border: 0;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+
+		.t-pink {
+			background-image: -webkit-linear-gradient(135deg, #ffb3ec 0%, #ffd9b3 100%);
+			background-image: -moz-linear-gradient(135deg, #ffb3ec 0%, #ffd9b3 100%);
+			background-image: -o-linear-gradient(135deg, #ffb3ec 0%, #ffd9b3 100%);
+			background-image: linear-gradient(135deg, #ffb3ec 0%, #ffd9b3 100%);
+		}
+
+		.t-pink .u-current-color {
+			border-bottom-color: #f99ddf;
+			background-color: #ffe7f9;
+		}
+
+		.t-pink .u-current-color:hover {
+			color: inherit;
+			border-bottom-color: #ef861c;
+			background-color: #ffd9b3;
+		}
+
+
+		@media only screen and (min-width: 48em) {
+			body {
+				height: calc(100vh - 40px);
+				margin: 20px;
+				overflow: hidden;
+				font-size: 1.0625em;
+			}
+
+			h1 {
+				font-size: 3.5em;
+			}
+
+			ul {
+				padding-left: 0;
+			}
+
+			.cv {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		@media only screen and (max-width: 26.25em) {
+			body {
+				font-size: .925em;
+			}
+
+			h1 {
+				font-size: 2.75em;
+			}
+
+			ul {
+				padding-left: 1.1rem;
 			}
 
 			.u-text-larger {
-				font-size: 1.2em;
-				line-height: 1.6;
+				font-size: 1.175em;
+				line-height: 1.5;
 			}
 
-			.u-text-lighter {
-				font-weight: 200;
+		}
+
+
+		@media print {
+
+			@page {
+				margin: 2cm;
 			}
 
-	        .u-font-weight-light {
-	        	font-weight: 200;
-	        }
-
-			.u-display-block {
-				display: block;
+			body {
+				font-family: "georgia", serif;
+				font-size: 6pt;
+				background: none;
 			}
 
-			.u-space {
-				margin-bottom: 1em;
+			a {
+				text-decoration: none;
 			}
 
-	        .u-nowrap {
-	        	white-space: nowrap;
-	        }
-
-			.u-hide-visually {
-				position: absolute;
-				width: 1px;
-				height: 1px;
-				padding: 0;
-				margin: -1px;
-				overflow: hidden;
-				clip: rect(0, 0, 0, 0);
-				border: 0;
-				clip-path: inset(50%);
-				white-space: nowrap;
+			ul {
+				padding-left: 0;
 			}
 
-			.t-pink {
-				background-image: -webkit-linear-gradient(135deg, #ffb3ec 0%,#ffd9b3 100%);
-	            background-image:    -moz-linear-gradient(135deg, #ffb3ec 0%,#ffd9b3 100%);
-	            background-image:      -o-linear-gradient(135deg, #ffb3ec 0%,#ffd9b3 100%);
-	            background-image:         linear-gradient(135deg, #ffb3ec 0%,#ffd9b3 100%);
+			.cv {
+				max-width: 80%;
 			}
 
-			.t-pink .u-current-color {
-				border-bottom-color: #f99ddf;
-				background-color: #ffe7f9;
+			.noprint {
+				display: none;
 			}
 
-			.t-pink .u-current-color:hover {
-				color: inherit;
-				border-bottom-color: #ef861c;
-				background-color: #ffd9b3;
-			}
+		}
+	</style>
+</head>
 
+<body class="t-pink">
+	<div class="site-content">
+		<div class="cv">
+			<h1>Samantha Sanders<span class="u-hide-visually"> – </span><span
+					class="sub-heading u-text-muted u-font-weight-light u-display-block u-space u-text-smaller">Front-end
+					Developer</span>
+			</h1>
+			<ul class="nav cv__rule">
+				<li class="nav__item">
+					<a class="u-current-color"
+						href="mailto:samantha.k.sanders@gmail.com">samantha.k.sanders@gmail.com</a>
+				</li>
+				<li class="nav__item">
+					<a class="u-current-color" href="tel:+64223173321">+64 22 317 3321</a>
+				</li>
+			</ul>
 
-	        @media only screen and (min-width: 48em) {
-	            body {
-	                height: calc(100vh - 40px);
-	            	margin: 20px;
-	                overflow: hidden;
-	                font-size: 1.0625em;
-	            }
+			<p class="u-text-larger u-text-muted u-space">I am a front-end developer with over 7 years of commercial
+				experience. With a background in graphic design, I enjoy working closely with designers so that together
+				we can craft beautiful and simple user experiences people will love.</p>
+			<p class="u-text-larger u-text-muted">I’m particularly interested in creating scalable, maintainable CSS
+				architectures and dedicated to making experiences that are accessible and easy to use for everyone.</p>
 
-				h1 {
-					font-size: 3.5em;
-				}
+			<hr />
 
-	            ul {
-	                padding-left: 0;
-	            }
-
-	            .cv {
-	                margin-left: auto;
-	                margin-right: auto;
-	            }
-	        }
-
-	        @media only screen and (max-width: 26.25em) {
-	            body {
-	                font-size: .925em;
-	            }
-
-				h1 {
-					font-size: 2.75em;
-				}
-
-	            ul {
-		            padding-left: 1.1rem;
-		        }
-
-				.u-text-larger {
-					font-size: 1.175em;
-					line-height: 1.5;
-				}
-
-	        }
-
-
-	        @media print {
-
-	            @page {
-	                margin: 2cm;
-	            }
-
-	            body {
-	                font-family: "georgia", serif;
-	                font-size: 6pt;
-	                background: none;
-	            }
-
-	            a {
-	                text-decoration: none;
-	            }
-
-	            ul {
-	                padding-left: 0;
-	            }
-
-	            .cv {
-	                max-width: 80%;
-	            }
-
-	            .noprint {
-	                display: none;
-	            }
-
-	        }
-
-    
-	    </style>
-	</head>
-
-	<body class="t-pink">
-		<div class="site-content">
-			<div class="cv">
-				<h1>Samantha Sanders<span class="u-hide-visually"> – </span><span class="sub-heading u-text-muted u-font-weight-light u-display-block u-space u-text-smaller">Front-end Developer</span>
-				</h1>
-				<ul class="nav cv__rule">
-					<li class="nav__item">
-						<a class="u-current-color" href="mailto:samantha.k.sanders@gmail.com">samantha.k.sanders@gmail.com</a>
-					</li>
-					<li class="nav__item">
-						<a class="u-current-color" href="tel:+64223173321">+64 22 317 3321</a>
-					</li>
+			<h2>Key skills</h2>
+			<div class="cv__item">
+				<ul>
+					<li>Excellent at creating scalable, maintainable CSS architectures (using BEM and ITCSS
+						methodologies).</li>
+					<li>Highly accomplished and focused on building accessible user experiences. Read a <a
+							class="u-current-color u-nowrap"
+							href="https://www.springload.co.nz/blog/being-pragmatic-about-accessibility/">blog post I
+							wrote about it.</a></li>
+					<li>Passionate about building rich interactions through CSS and progressively enhanced vanilla
+						JavaScript.</li>
+					<li>Proficient at working with various templating languages (Jinja2, Django, React/JSX).</li>
+					<li>Experience writing ES6+ JavaScript, React, Typescript, using Node-based tooling (Babel, module
+						bundlers).</li>
+					<li>Comfortable conducting staff/client training and peer code reviews.</li>
+					<li>Enjoy sharing my expertise with others in order to collaboratively craft and improve beautiful
+						and usable experiences.</li>
+					<li>Experience with build tools and pre-/post-processors - yarn/npm, Webpack, Sass.</li>
+					<li>Version control via Git - issue trackers and pull requests.</li>
+					<li>Familiarity with Python, Django, Wagtail CMS and PHP.</li>
+					<li>Happy interacting with key staff and clients to provide meaningful design and techncial
+						insight in order to deliver the best experience for all users.</li>
 				</ul>
-
-				<p class="u-text-larger u-text-muted u-space">I am a front-end  developer with over six years of commercial experience. With a background in graphic design, I enjoy working closely with designers so that together we can craft beautiful and simple user experiences people will love.</p>
-				<p class="u-text-larger u-text-muted">I’m particularly interested in creating scalable, maintainable CSS architectures and dedicated to making experiences that are accessible and easy to use for everyone.</p>
-
-				<hr />
-
-				<h2>Key skills</h2>
-				<div class="cv__item">
-					<ul>
-						<li>Excellent at creating scalable, maintainable CSS architectures (using BEM and ITCSS methodologies).</li>
-						<li>Highly accomplished and focused on building accessible user experiences. Read a <a class="u-current-color u-nowrap" href="https://www.springload.co.nz/blog/being-pragmatic-about-accessibility/">blog post I wrote about it.</a></li>
-						<li>Passionate about building rich interactions through CSS and progressively enhanced vanilla JavaScript.</li>
-						<li>Proficient at working with various templating languages (Jinja2, Django, React/JSX).</li>
-						<li>Enjoy sharing my expertise with others in order to collaboratively craft and improve beautiful and usable experiences.</li>
-						<li>Comfortable conducting staff/client training and peer code reviews.</li>
-						<li>Experience writing ES6+ JavaScript, using Node-based tooling (Babel, module bundlers).</li>
-						<li>Experience with build tools and pre-/post-processors - yarn/npm, Webpack, Sass.</li>
-						<li>Version control via Git - issue trackers and pull requests.</li>
-						<li>Familiarity with Python, Django, Wagtail CMS and PHP.</li>
-					</ul>
-				</div>
-				<hr />
-
-				<h2>Employment history</h2>
-				<div class="cv__item">
-					<h3>Front-end Lead, Springload, Wellington</h3>
-					<p class="sub-heading u-text-muted">Aug 2013 - Jul 2018</p>
-					<p>I built front-end code for responsive websites and applications, helped a growing front-end team write scalable maintainable CSS, and ensured projects were built in an accessible and progressively enhanced manner. Key projects include the New Zealand Red Cross, ACC, Kiwibank, New Zealand Festival and RealMe.</p>
-				</div>
-
-				<div class="cv__item">
-					<h3>Web Developer, Spark Digital, Melbourne</h3>
-					<p class="sub-heading u-text-muted">Aug 2012 - Jul 2013</p>
-					<p>Responsible for building responsive websites, Facebook applications, email templates, and WordPress content management systems. We were a very small team so it was important for me to be on top of new technologies and ideas as the industry developed. This helped me collaborate with our designer to provide better project design concepts.</p>
-				</div>
-
-				<div class="cv__item">
-					<h3>Front-end Developer, DTDigital, Melbourne</h3>
-					<p class="sub-heading u-text-muted">Jun 2012 - Jul 2012</p>
-					<p>Translating designs into HTML, CSS and Javascript. With short time lines diligence was key while working on large existing code bases for the Bank of Melbourne, Officeworks, BMW and Myer.</p>
-				</div>
-
-				<div class="cv__item">
-					<h3>Analyst & Designer, McNamara Research, Wellington</h3>
-					<p class="sub-heading u-text-muted">Aug 2011 - May 2012</p>
-					<p>Monitoring and analysis of conventional communications data for government and private sector clients, as well as the design and layout of formal reports to be presented to those clients.</p>
-				</div>
-				<hr />
-
-				<h2>Education</h2>
-				<div class="cv__item">
-					<h3>Bachelor of Fine Arts in Graphic Design</h3>
-					<p class="sub-heading u-text-muted">Canterbury University, 2007-2010</p>
-					<h3>Diploma of Web Development</h3>
-					<p class="u-text-muted">Natcoll Design Technology, 2011-2012</p>
-				</div>
-
-				<hr />
-				<p>References available on request</p>
-				<p class="noprint"><a class="u-current-color" href="samantha-sanders-cv-01-2019.pdf">Download this CV as PDF</a></p>
 			</div>
+			<hr />
+
+			<h2>Employment history</h2>
+			<div class="cv__item">
+				<h3>Senior Front-end Developer, Kiwi Wealth, Wellington</h3>
+				<p class="sub-heading u-text-muted">Feb 2019 - now</p>
+				<p>I am currently building and integrating Kiwi Wealth's new design system.</p>
+				<p>It consists of a React/Typescript UI component library, a prototyping sandpit and documentation for
+					how to use these new tools and processes.</p>
+				<p>An essential part of this role is to teach staff how to keep building on this future friendly
+					foundation so that the benefits of having a resuable base can be felt by both the organisation
+					and the end user.</p>
+			</div>
+			<div class="cv__item">
+				<h3>Front-end Lead, Springload, Wellington</h3>
+				<p class="sub-heading u-text-muted">Aug 2013 - Jul 2018</p>
+				<p>I built front-end code for responsive websites and applications, helped a growing front-end team
+					write scalable maintainable CSS, and ensured projects were built in an accessible and progressively
+					enhanced manner. Key projects include the New Zealand Red Cross, ACC, Kiwibank, New Zealand Festival
+					and RealMe.</p>
+			</div>
+
+			<div class="cv__item">
+				<h3>Web Developer, Spark Digital, Melbourne</h3>
+				<p class="sub-heading u-text-muted">Aug 2012 - Jul 2013</p>
+				<p>Responsible for building responsive websites, Facebook applications, email templates, and WordPress
+					content management systems. We were a very small team so it was important for me to be on top of new
+					technologies and ideas as the industry developed. This helped me collaborate with our designer to
+					provide better project design concepts.</p>
+			</div>
+
+			<div class="cv__item">
+				<h3>Front-end Developer, DTDigital, Melbourne</h3>
+				<p class="sub-heading u-text-muted">Jun 2012 - Jul 2012</p>
+				<p>Translating designs into HTML, CSS and Javascript. With short time lines diligence was key while
+					working on large existing code bases for the Bank of Melbourne, Officeworks, BMW and Myer.</p>
+			</div>
+
+			<div class="cv__item">
+				<h3>Analyst & Designer, McNamara Research, Wellington</h3>
+				<p class="sub-heading u-text-muted">Aug 2011 - May 2012</p>
+				<p>Monitoring and analysis of conventional communications data for government and private sector
+					clients, as well as the design and layout of formal reports to be presented to those clients.</p>
+			</div>
+			<hr />
+
+			<h2>Education</h2>
+			<div class="cv__item">
+				<h3>Bachelor of Fine Arts in Graphic Design</h3>
+				<p class="sub-heading u-text-muted">Canterbury University, 2007-2010</p>
+				<h3>Diploma of Web Development</h3>
+				<p class="u-text-muted">Natcoll Design Technology, 2011-2012</p>
+			</div>
+
+			<hr />
+			<p>References available on request</p>
+			<p class="noprint"><a class="u-current-color" href="samantha-sanders-cv-01-2019.pdf">Download this CV as
+					PDF</a></p>
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
-
-
