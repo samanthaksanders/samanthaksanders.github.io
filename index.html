@@ -26,19 +26,59 @@
     <meta name="theme-color" content="#ffffff" />
 
     <style type="text/css" media="all">
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      :root {
+        --primary-color: #ffb3ec;
+        --primary-light-color: #ffe7f9;
+        --primary-dark-color: #f99ddf;
+        --secondary-color: #ffd9b3;
+        --secondary-light-color: #ffd9b3;
+        --secondary-dark-color: #ef861c;
+        --text-muted-color: #757575;
+        --border-color: #dadada;
+        --border-color-dark: #bdbcbc;
+        --white: #ffffff;
+        --black: #323232;
+        --text-color: var(--black);
+        --bg-color: var(--white);
+      }
+
+      [data-theme="dark"] {
+        --primary-color: #fe60d6;
+        --primary-light-color: #ffb3ec;
+        --primary-dark-color: #f99ddf;
+        --secondary-color: #f9ac5e;
+        --secondary-light-color: #fb9c7e;
+        --secondary-dark-color: #ef861c;
+        --text-color: var(--white);
+        --bg-color: #262245;
+        /* #1d1a32 */
+        --text-muted-color: #b9b9b9;
+      }
+
       body {
         line-height: 1.75;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        color: #323232;
         font-weight: 300;
         margin: 10px;
-        background: #f0f0f0;
+        position: relative;
+        color: var(--text-color);
+        background-color: var(--bg-color);
       }
 
       h1 {
         margin-bottom: 0;
-        font-size: 3em;
+        font-size: 2.75em;
         line-height: 1;
       }
 
@@ -69,30 +109,32 @@
         height: 0;
         width: 100%;
         border: none;
-        border-bottom: solid 1px #dadada;
+        border-bottom: solid 1px var(--border-color);
         margin-bottom: 2em;
         margin-top: 2em;
       }
 
       a {
         color: inherit;
-        background-color: #f0f0f0;
+        background-color: var(--bg-color);
         text-decoration: none;
-        border-bottom: solid 1px #bdbcbc;
+        border-bottom: solid 1px var(--border-color-dark);
+        padding: 0 0.25em;
       }
 
       a:hover {
-        color: #ffffff;
-        background-color: #232323;
-        border-bottom-color: #232323;
+        color: var(--white);
+        background-color: var(--text-color);
+        border-bottom-color: var(--text-color);
       }
 
       .site-content {
         position: relative;
-        z-index: 3;
+        z-index: 0;
         height: 100%;
         overflow: scroll;
-        background: #fff;
+        background-color: var(--bg-color);
+        transition: background-color 0.25s ease;
       }
 
       .site-content::-webkit-scrollbar {
@@ -105,7 +147,7 @@
       }
 
       .cv__rule {
-        border-bottom: solid 1px #dadada;
+        border-bottom: solid 1px var(--border-color);
         padding-bottom: 2em;
         margin-bottom: 2em;
       }
@@ -130,8 +172,79 @@
         margin-bottom: 0;
       }
 
+      .theme-switch {
+        position: relative;
+        display: inline-flex;
+        margin-left: 5%;
+        margin-top: 1.5em;
+      }
+
+      @media only screen and (min-width: 40em) {
+        .theme-switch {
+          position: absolute;
+          z-index: 1;
+          top: 1.5em;
+          right: 1.5em;
+          display: flex;
+          margin: 0;
+        }
+      }
+
+      .theme-switch::after {
+        content: "";
+        display: block;
+        width: 1.125em;
+        height: 1.125em;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 2.375em;
+        margin-top: -0.5625em;
+      }
+
+      [data-theme="dark"] .theme-switch::after {
+        left: unset;
+        right: 2.25em;
+      }
+
+      .theme-switch__label {
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.875em;
+        color: var(--text-muted-color);
+      }
+
+      .theme-switch__label--light::after {
+        content: "";
+        display: block;
+        height: 0.75em;
+        width: 1.25em;
+        background-color: var(--text-color);
+        border-top-left-radius: 0.75em;
+        border-bottom-left-radius: 0.75em;
+        margin-left: 0.5em;
+      }
+
+      .theme-switch__label--dark::before {
+        content: "";
+        display: block;
+        height: 0.75em;
+        width: 1.25em;
+        background-color: var(--text-color);
+        border-top-right-radius: 0.75em;
+        border-bottom-right-radius: 0.75em;
+        margin-right: 0.5em;
+      }
+
+      .theme-switch__input:focus-visible + label {
+        outline: var(--primary-dark-color) 2px solid;
+        outline-offset: 4px;
+      }
+
       .u-text-muted {
-        color: #757575;
+        color: var(--text-muted-color);
       }
 
       .u-text-smaller {
@@ -139,7 +252,7 @@
       }
 
       .u-text-larger {
-        font-size: 1.2em;
+        font-size: 1.125em;
         line-height: 1.6;
       }
 
@@ -179,27 +292,35 @@
       .t-pink {
         background-image: -webkit-linear-gradient(
           135deg,
-          #ffb3ec 0%,
-          #ffd9b3 100%
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
         );
         background-image: -moz-linear-gradient(
           135deg,
-          #ffb3ec 0%,
-          #ffd9b3 100%
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
         );
-        background-image: -o-linear-gradient(135deg, #ffb3ec 0%, #ffd9b3 100%);
-        background-image: linear-gradient(135deg, #ffb3ec 0%, #ffd9b3 100%);
+        background-image: -o-linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        background-image: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
       }
 
       .t-pink .u-current-color {
-        border-bottom-color: #f99ddf;
-        background-color: #ffe7f9;
+        border-bottom-color: var(--primary-dark-color);
+        background-color: var(--primary-light-color);
+        color: var(--black);
       }
 
       .t-pink .u-current-color:hover {
-        color: inherit;
-        border-bottom-color: #ef861c;
-        background-color: #ffd9b3;
+        border-bottom-color: var(--secondary-dark-color);
+        background-color: var(--secondary-light-color);
       }
 
       @media only screen and (min-width: 48em) {
@@ -227,10 +348,6 @@
       @media only screen and (max-width: 26.25em) {
         body {
           font-size: 0.925em;
-        }
-
-        h1 {
-          font-size: 2.75em;
         }
 
         ul {
@@ -275,6 +392,37 @@
 
   <body class="t-pink">
     <div class="site-content">
+      <div class="theme-switch noprint">
+        <input
+          class="theme-switch__input u-hide-visually"
+          type="radio"
+          id="theme-switch-light"
+          name="theme-switch"
+          value="light"
+        />
+        <label
+          class="theme-switch__label theme-switch__label--light"
+          for="theme-switch-light"
+          ><span class="u-hide-visually">View in </span>Light
+          <span class="u-hide-visually"> mode</span></label
+        >
+        <input
+          class="theme-switch__input u-hide-visually"
+          type="radio"
+          id="theme-switch-dark"
+          name="theme-switch"
+          value="dark"
+        />
+        <label
+          class="theme-switch__label theme-switch__label--dark"
+          for="theme-switch-dark"
+          ><span class="u-hide-visually">View in </span>Dark<span
+            class="u-hide-visually"
+          >
+            mode</span
+          ></label
+        >
+      </div>
       <div class="cv">
         <h1>
           Samantha Sanders<span class="u-hide-visually"> – </span
@@ -462,5 +610,37 @@
         </p>
       </div>
     </div>
+
+    <script type="text/javascript">
+      const themeToggles = document.querySelectorAll("input[type='radio']");
+
+      const setTheme = (theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      };
+
+      const switchTheme = (e) => {
+        if (e.target.value === "dark") {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      };
+
+      themeToggles.forEach((item) =>
+        item.addEventListener("change", switchTheme, false)
+      );
+
+      if (
+        !localStorage.getItem("theme") ||
+        localStorage.getItem("theme") === "light"
+      ) {
+        setTheme("light");
+        themeToggles[0].setAttribute("checked", true);
+      } else {
+        setTheme("dark");
+        themeToggles[1].setAttribute("checked", true);
+      }
+    </script>
   </body>
 </html>
