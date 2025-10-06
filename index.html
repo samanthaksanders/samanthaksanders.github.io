@@ -5,6 +5,26 @@
     <title>Samantha Sanders | Front-end Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+          if (stored === "dark" || (!stored && prefersDark)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+          } else if (stored === "light") {
+            document.documentElement.removeAttribute("data-theme");
+          }
+          // If no preference and no media query support, leave default (light)
+        } catch (e) {
+          // Ignore storage errors (e.g. privacy modes)
+        }
+      })();
+    </script>
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -134,7 +154,7 @@
         height: 100%;
         overflow: scroll;
         background-color: var(--bg-color);
-        transition: background-color 0.25s ease;
+        /* transition: background-color 0.25s ease; */
       }
 
       .site-content::-webkit-scrollbar {
@@ -452,8 +472,8 @@
           experiences people will love.
         </p>
         <p class="u-text-larger">
-          I've been a Front-end Engineer for 10 years now, and for the past few
-          I've specialised in Design Systems and Component Libraries (React
+          I've been a Front-end Engineer for over 10 years now, and for the past
+          few I've specialised in Design Systems and Component Libraries (React
           based) with a keen focus on improving accessibility. I also very much
           enjoy writing CSS.
         </p>
@@ -518,8 +538,24 @@
 
         <h2>Employment history</h2>
         <div class="cv__item">
+          <h3>Senior Front-end Developer, Bupa, Melbourne (Fully remote)</h3>
+          <p class="sub-heading u-text-muted">May 2023 - now</p>
+          <p>
+            As part of the Design Systems team we are responsible for building
+            libraries of reusable React components and utilities that can be
+            used as building blocks to create consistent and accessible digital
+            products for varied Bupa ecosystems.
+          </p>
+          <p>
+            By collaborating with designers and developers across the
+            organisation we play a key role in helping teams work more
+            efficiently by reusing components, reducing duplication of effort,
+            and speeding up the development process.
+          </p>
+        </div>
+        <div class="cv__item">
           <h3>Senior UI Engineer, Lendi, Sydney (Fully remote)</h3>
-          <p class="sub-heading u-text-muted">Apr 2022 - now</p>
+          <p class="sub-heading u-text-muted">Apr 2022 - Mar 2023</p>
           <p>
             As part of the Design Systems team at Lendi, we are responsible for
             improving and maintaining our design system using React and
@@ -608,7 +644,7 @@
         <hr />
         <p>References available on request</p>
         <p class="noprint">
-          <a class="u-current-color" href="samantha-sanders-cv-03-2023.pdf"
+          <a class="u-current-color" href="samantha-sanders-cv-10-2025.pdf"
             >Download this CV as PDF</a
           >
         </p>
@@ -635,15 +671,13 @@
         item.addEventListener("change", switchTheme, false)
       );
 
-      if (
-        !localStorage.getItem("theme") ||
-        localStorage.getItem("theme") === "light"
-      ) {
-        setTheme("light");
-        themeToggles[0].setAttribute("checked", true);
+      // Sync radio checked state to current theme
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme") || "light";
+      if (currentTheme === "dark") {
+        themeToggles[1].checked = true;
       } else {
-        setTheme("dark");
-        themeToggles[1].setAttribute("checked", true);
+        themeToggles[0].checked = true;
       }
     </script>
   </body>
